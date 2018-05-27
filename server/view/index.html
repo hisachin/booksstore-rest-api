@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	</head>
+	<body>
+		<div class="main-page">
+			<div class="container">
+				<div class="card">
+					<header>
+						<h1>Book Store Api Docs</h1>
+						<hr style="color: #333;">
+					</header>
+					<section>
+						<div class="docs-section">
+							<div class="bookapi-box">
+								<h3>Books</h3>
+								<hr>
+								<div class="bookapi-box-table">
+									<table class="table table-bordered table-hover table-responseive">
+										<thead>
+											<th>S.N.</th>
+											<th>Title</th>
+											<th>Method</th>
+											<th>Url</th>
+											<th>Request Parameter</th>
+											<th>Response Parameter</th>
+										</thead>
+										<tbody>
+											<tr>
+												<td>1</td>
+												<td>Get All Books</td>
+												<td><label class="label label-info">GET</label></td>
+												<td>/api/v1/books</td>
+												<td></td>
+												<td>
+													[
+														{
+													    	"status": true,
+													    	"message": {
+													        	"_id": "5b04609177b6b623f48fed9e",
+													        	"title": "Book 2",
+													        	"description": "Book 2 description",
+													        	"isbn": 1234567891236,
+													        	"price": 20,
+													        	"author": "5b045a59a409161af6f61c45",
+													        	"publisher": "publisher 1",
+													        	"language": "english",
+													        	"genre": "programming",
+													        	"createdAt": "2018-05-22T18:25:21.095Z",
+													        	"updatedAt": "2018-05-22T18:25:21.095Z",
+													        	"__v": 0
+													    	}
+														}
+													]	
+												</td>
+											</tr>
+											<tr>
+												<td>2</td>
+												<td>Get Single Books</td>
+												<td><label class="label label-info">GET</label></td>
+												<td>/api/v1/books/bookid</td>
+												<td>
+													<b>Required parameter :
+													bookid </b>
+
+												</td>
+												<td>
+													{
+													    "status": true,
+													    "message": {
+													        "_id": "5b04609177b6b623f48fed9e",
+													        "title": "Book 2",
+													        "description": "Book 2 description",
+													        "isbn": 1234567891236,
+													        "price": 20,
+													        "author": "5b045a59a409161af6f61c45",
+													        "publisher": "publisher 1",
+													        "language": "english",
+													        "genre": "programming",
+													        "createdAt": "2018-05-22T18:25:21.095Z",
+													        "updatedAt": "2018-05-22T18:25:21.095Z",
+													        "__v": 0
+													    }
+													}
+												</td>
+											</tr>
+											<tr>
+												<td>3</td>
+												<td>Add New Book</td>
+												<td><label class="label label-success">POST</label></td>
+												<td>/api/v1/books</td>
+												<td>
+
+													<b>Required parameter :</b>
+													title,description,isbn,price 
+
+													<b>Body</b>
+													{
+														"title":"Book 5",
+														"description":"Book 5 description",
+														"isbn":"1234567891237",
+														"price":"60",
+														"author":"5b045a59a409161af6f61c45",
+														"publisher":"publisher 2552",
+														"language":"english",
+														"genre":"rest api"
+													}
+												</td>
+												<td>
+													{
+													    "status": true,
+													    "message": "Book added successfully."
+													}
+												</td>
+											</tr>
+											<tr>
+												<td>4</td>
+												<td>Update Book</td>
+												<td><label class="label label-warning">PUT</label></td>
+												<td>/api/v1/books</td>
+												<td>
+
+													<b>Required parameter :</b>
+													title,description,isbn,price 
+
+													<b>Body</b>
+													{
+														"title":"Book 5",
+														"description":"Book 5 description",
+														"isbn":"1234567891237",
+														"price":"60",
+														"author":"5b045a59a409161af6f61c45",
+														"publisher":"publisher 2552",
+														"language":"english",
+														"genre":"rest api"
+													}
+												</td>
+												<td>
+													{
+													    "status": true,
+													    "message": "Details updated successfully."
+													}
+												</td>
+											</tr>
+											<tr>
+												<td>5</td>
+												<td>Delete Book</td>
+												<td><label class="label label-danger">DELETE</label></td>
+												<td>/api/v1/books/bookid</td>
+												<td>
+
+													<b>Required parameter :</b>
+													bookid
+												</td>
+												<td>
+													{
+													    "status": true,
+													    "message": "Book deleted successfully!"
+													}
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="authorapi-box">
+								<h3>Author</h3>
+								<hr>
+								<div class="authorapi-box-table">
+									<table class="table table-bordered table-hover table-responseive">
+										<thead>
+											<th>S.N.</th>
+											<th>Title</th>
+											<th>Method</th>
+											<th>Url</th>
+											<th>Request Parameter</th>
+											<th>Response Parameter</th>
+										</thead>
+										<tbody>
+											<tr>
+												<td>1</td>
+												<td>Get All Authors</td>
+												<td><label class="label label-info">GET</label></td>
+												<td>/api/v1/authors</td>
+												<td></td>
+												<td>
+													[
+													    {
+													        "_id": "5b045a59a409161af6f61c45",
+													        "name": "sachin",
+													        "createdAt": "2018-05-22T17:58:49.018Z",
+													        "updatedAt": "2018-05-22T17:58:49.018Z",
+													        "__v": 0
+													    }
+													]
+												</td>
+											</tr>
+											<tr>
+												<td>2</td>
+												<td>Get Single Authors</td>
+												<td><label class="label label-info">GET</label></td>
+												<td>/api/v1/authors/authorid</td>
+												<td>
+													<b>Required parameter :
+													authorid </b>
+												</td>
+												<td>
+													{
+													    "status": true,
+													    "message": {
+													        "_id": "5b045a59a409161af6f61c45",
+													        "name": "sachin",
+													        "createdAt": "2018-05-22T17:58:49.018Z",
+													        "updatedAt": "2018-05-22T17:58:49.018Z",
+													        "__v": 0
+													    }
+													}
+												</td>
+											</tr>
+											<tr>
+												<td>3</td>
+												<td>Add New Author</td>
+												<td><label class="label label-success">POST</label></td>
+												<td>/api/v1/authors</td>
+												<td>
+
+													<b>Required parameter :</b>
+													name 
+													<b>Body</b>
+													{
+														"name":"sachin"
+													}
+												</td>
+												<td>
+													{
+													    "status": true,
+													    "message": "Author added successfully."
+													}
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="uploadapi-box">
+								<h3>Upload</h3>
+								<hr>
+								<table class="table table-bordered table-hover table-responseive">
+									<thead>
+										<th>S.N.</th>
+										<th>Title</th>
+										<th>Method</th>
+										<th>URL</th>
+										<th>Request Parameter</th>
+										<th>Response Parameter</th>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>Upload Book Data in bulk using CSV file</td>
+											<td><label class="label label-success">POST</label></td>
+											<td>/api/v1/uploads</td>
+											<td>
+												<b> Only CSV files are allowed</b>
+												<br>
+												<b> Request params :</b>
+													booksfile
+											</td>
+											<td>
+												{
+													status:true,
+													message:'File uploaded successfully.'
+												}
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="searchapi-box">
+								<h3>Upload</h3>
+								<hr>
+								<table class="table table-bordered table-hover table-responseive">
+									<thead>
+										<th>S.N.</th>
+										<th>Title</th>
+										<th>Method</th>
+										<th>URL</th>
+										<th>Request Parameter</th>
+										<th>Response Parameter</th>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>Search Books</td>
+											<td><label class="label label-info">GET</label></td>
+											<td>/api/v1/search/books?title='Book 4'&&genre='rest api'</td>
+											<td>
+												<b> You can search by</b>
+													title,genre,publisher,isbn
+											</td>
+											<td>
+												{
+												    "status": true,
+												    "message": [
+												        {
+												            "_id": "5b0a61c277e0172d9df55bcc",
+												            "title": "Book 4",
+												            "description": "Book 4 description",
+												            "isbn": 1234567891234,
+												            "price": 60,
+												            "author": "5b045a59a409161af6f61c45",
+												            "publisher": "publisher 2552",
+												            "language": "english",
+												            "genre": "rest api",
+												            "createdAt": "2018-05-27T07:44:02.640Z",
+												            "updatedAt": "2018-05-27T07:44:02.640Z",
+												            "__v": 0
+												        }
+												    ]
+												}
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</section>
+					<footer>
+						 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+						<!-- Latest compiled and minified JavaScript -->
+						<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+					</footer>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>
